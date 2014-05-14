@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOST="npm.whatever.com"
+HOST="npm.localhost"
 
 # normalize the working dir to the directory of the script
 cd $(dirname $0);SCRIPT_DIR=$(pwd)
@@ -11,4 +11,4 @@ sed -e "s#{{pwd}}#`pwd`#g" \
     nginx.template.conf > nginx.conf
 
 # start nginx
-#nginx -c `pwd`/nginx.conf
+./nginx-1.6.0/objs/nginx -c $SCRIPT_DIR/nginx.conf
